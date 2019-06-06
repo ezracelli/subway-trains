@@ -9,7 +9,8 @@
     "dev": "concurrently \"nuxt\" \"cd server && yarn run start\"",
     "build": "concurrently \"nuxt build\" \"cd server && yarn run build\"",
     "start": "concurrently \"nuxt start\" \"cd server && yarn run prod\"",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "preinstall": "cd server && yarn install"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
