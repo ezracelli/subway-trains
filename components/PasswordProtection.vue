@@ -23,12 +23,18 @@
 </template>
 
 <script>
+import Cookie from 'js-cookie'
+
 export default {
   data () {
     return {
       password: '',
       authenticated: null,
     }
+  },
+  created () {
+    const authenticated = Cookie.get('authenticated')
+    if (authenticated) this.$emit('authenticate')
   },
   methods: {
     attemptAuthentication () {

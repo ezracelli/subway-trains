@@ -1,6 +1,8 @@
 import Vue from 'vue'
+import Cookie from 'js-cookie'
 import set from 'vue-set'
 import { get } from 'lodash'
+
 import api from '~/assets/api'
 
 export const state = () => ({
@@ -21,7 +23,10 @@ export const mutations = {
 }
 
 export const actions = {
-  authenticate: ({ commit }) => commit('authenticate'),
+  authenticate: ({ commit }) => {
+    Cookie.set('authenticated', true, { expires: 7 })
+    commit('authenticate')
+  },
   async loadCars ({ commit }) {
     commit('setCars', Symbol.for('loading'))
 
