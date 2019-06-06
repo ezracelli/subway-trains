@@ -1,0 +1,38 @@
+{
+  "name": "subway-trains",
+  "version": "1.0.0",
+  "description": "A PWA for tracking subway train numbers",
+  "author": "Ezra Celli",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"nuxt\" \"cd server && yarn run start\"",
+    "build": "concurrently \"nuxt build\" \"cd server && yarn run build\"",
+    "start": "concurrently \"nuxt start\" \"cd server && yarn run prod\"",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-beta.16",
+    "@nuxtjs/style-resources": "^0.1.2",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "cross-env": "^5.2.0",
+    "jquery": "^3.4.1",
+    "nuxt": "^2.4.0",
+    "popper.js": "^1.15.0",
+    "reset-css": "^4.0.1",
+    "vue-set": "^0.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "file-loader": "^3.0.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "svg-loader": "^0.0.2",
+    "url-loader": "^1.1.2"
+  }
+}

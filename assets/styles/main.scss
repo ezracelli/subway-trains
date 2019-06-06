@@ -1,0 +1,13 @@
+@import '../../node_modules/reset-css/sass/reset';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+@import 'icomoon/icomoon';
+
+main {
+  padding-top: 1rem;
+}
+
+i {
+  line-height: 1.5;
+  margin-top: 2px;
+}
