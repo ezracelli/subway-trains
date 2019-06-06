@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const base = () => `${window.location.origin.replace(/:\d+$/, '')}/api`
+axios.defaults.withCredentials = true
+
+const base = () => `${window.location.origin}/api`
 const api = {}
 
 api.loadCars = () => axios.get(`${base()}/cars`).then(({ data }) => data)

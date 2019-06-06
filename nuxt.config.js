@@ -1,4 +1,8 @@
 import pkg from './package'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export default {
   mode: 'universal',
@@ -65,7 +69,7 @@ export default {
   */
   build: {
     transpile: [
-      'bootstrap-vue',
+      'bootstrap-vue/nuxt',
       'vue-set',
       '@/plugins',
     ],
@@ -75,4 +79,35 @@ export default {
     extend (config, ctx) {
     },
   },
+
+  /*
+  ** Server middleware configuration
+  */
+  serverMiddleware: [ '~/server/dist/index.js' ],
+
+  /*
+  ** Hooks configuration
+  */
+  hooks: {
+    listen () {
+      const { MONGODB_URI } = process.env
+
+      if (!MONGODB_URI) {
+        console.error('MONGODB_URI must be specified')
+        process.exit(1)
+      }
+
+      mongoose
+        .connect(
+          MONGODB_URI,
+          { useFindAndModify: false, useNewUrlParser: true }
+        )
+        .then(() => console.log('connection to database established'))
+        .catch(err => {
+          console.log(err)
+          process.exit(1)
+        })
+    },
+  },
+
 }
