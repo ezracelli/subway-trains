@@ -51,6 +51,15 @@ export default {
     '@nuxtjs/pwa',
   ],
 
+  manifest: {
+    backgroundColor: 'white',
+    display: 'fullscreen',
+    lang: 'en-US',
+    name: 'Subway Trains',
+    shortName: 'Trains',
+    themeColor: 'white',
+  },
+
   styleResources: { scss: [ '~/assets/styles/mixins/_breakpoints.scss' ] },
 
   bootstrapVue: {
