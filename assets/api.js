@@ -1,12 +1,12 @@
-import axios from 'axios'
+import cachios from 'cachios'
 
-axios.defaults.withCredentials = true
+// cachios.defaults.withCredentials = true
 
 const base = () => `${window.location.origin}/api`
 const api = {}
 
-api.loadCars = () => axios.get(`${base()}/cars`).then(({ data }) => data)
-api.saveCar = car => axios.post(`${base()}/cars`, car).then(({ data }) => data)
-// api.saveCar = (carNumber, car) => axios.put(`${base()}/cars/${carNumber}`, car).then(({ data }) => data)
+api.loadCars = () => cachios.get(`${base()}/cars`).then(({ data }) => data)
+api.saveCar = car => cachios.post(`${base()}/cars`, car).then(({ data }) => data)
+// api.saveCar = (carNumber, car) => cachios.put(`${base()}/cars/${carNumber}`, car).then(({ data }) => data)
 
 export default api
