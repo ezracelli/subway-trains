@@ -5,9 +5,14 @@
     <password-protection
       v-if="!authenticated"
       v-on="{ authenticate }"
+      key="password"
     />
 
-    <main v-else class="container">
+    <main
+      v-else
+      class="container"
+      key="app"
+    >
       <train-form />
 
       <train-data v-if="carsLoaded" />

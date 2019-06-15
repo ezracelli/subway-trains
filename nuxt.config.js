@@ -51,6 +51,8 @@ export default {
     '@nuxtjs/pwa',
   ],
 
+  workbox: { config: { debug: true } },
+
   manifest: {
     backgroundColor: 'white',
     display: 'fullscreen',
